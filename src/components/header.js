@@ -1,35 +1,18 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { Box } from "@chakra-ui/react"
+import { Link as GatsbyLink } from "gatsby"
+import { Box, Heading, Link } from "@chakra-ui/react"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+  <Box background="rebeccapurple" marginBottom="1.45rem">
+    <Box margin="0 auto" maxWidth="960" padding="1.45rem 1.0875rem">
+      <Heading as="h1" margin={0}>
+        <Link as={GatsbyLink} to="/" color="white" textDecoration="none">
           {siteTitle}
         </Link>
-      </h1>
-    </div>
-  </header>
+      </Heading>
+    </Box>
+  </Box>
 )
 
 Header.propTypes = {
